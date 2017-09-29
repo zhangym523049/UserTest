@@ -36,7 +36,9 @@ public class UserTestContext {
 	
 	public final static String PASSWORD_ERROR = "密码错误，请重新输入！";
 	
+	public final static String TYPE_PHONENUM = "phoneNum";
 	
+	public final static String TYPE_EMAIL = "email";
 	
 	
 	

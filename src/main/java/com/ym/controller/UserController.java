@@ -22,6 +22,8 @@ import com.ym.bean.Account;
 import com.ym.bean.User;
 import com.ym.service.UserInfoService;
 import com.ym.service.UserService;
+import com.ym.util.SendEmail;
+import com.ym.util.SendMessage;
 import com.ym.util.UserTestContext;
 import com.ym.util.VerifyCodeUtils;
 
@@ -196,7 +198,8 @@ public class UserController {
 	
 	@RequestMapping("/goLogin.do")
 	public String goLogin() {
-		return "login";
+		//return "login";
+		return "forgetPassword";
 	}
 	
 	@RequestMapping("/goRegister.do")
@@ -254,6 +257,47 @@ public class UserController {
 		}
 		
 	}
+	
+	/**
+	 * 
+	 * 验证 用户填写验证码是否正确
+	 * @param request
+	 * @param response
+	 */
+	@RequestMapping("/forgetPassword.do")  
+    public String forgetPassword(@RequestParam(value="phoneNum")String phoneNum,
+    		@RequestParam(value="email")String email,
+    		@RequestParam(value="checkCode")String checkCode,
+    		@RequestParam(value="type")String type) { 
+		try {
+			
+			if(StringUtils.isEmpty(type)) {
+				return ReturnMessageEnums.UNKNOWN_ERROR.geteMessage(); 
+			}
+			
+			if(type.equals(UserTestContext.TYPE_PHONENUM)) {
+				SendMessage.send(phoneNum);
+			}
+			
+			if(type.equals(UserTestContext.TYPE_EMAIL)){
+				
+				SendEmail.send(email);
+			}
+			
+			
+			
+			
+			
+			return "forgetPassword";
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+			return ReturnMessageEnums.UNKNOWN_ERROR.geteMessage();
+		}
+		
+	}
+	
+	
+	
 	
 	
 	/**

@@ -16,6 +16,7 @@
         <!-- log4j日志文件管理包版本 -->  
         <slf4j.version>1.7.7</slf4j.version>  
         <log4j.version>1.2.17</log4j.version>  
+        <javamail.version>1.4.1</javamail.version>
     </properties>
  
   <dependencies>
@@ -171,11 +172,23 @@
             <artifactId>commons-codec</artifactId>  
             <version>1.9</version>  
         </dependency>
-        <dependency>
-        	<groupId>commons-codec</groupId>
-        	<artifactId>commons-codec</artifactId>
-        	<version>1.6</version>
-    	</dependency>
+    	 <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>${javamail.version}</version>
+        </dependency>  
+		<dependency>
+			<groupId>commons-httpclient</groupId>
+			<artifactId>commons-httpclient</artifactId>
+			<version>3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+		
+		
   </dependencies>
   <build>
     <finalName>UserTest</finalName>

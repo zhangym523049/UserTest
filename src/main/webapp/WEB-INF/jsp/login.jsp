@@ -9,7 +9,7 @@
 <script type="text/javascript">
 function getXmlHttpRequest(){
     var xmlHttpRequest= "";
-    if(window.XMLHttpRequest){ 
+    if(window.XMLHttpRequest){
         xmlHttpRequest = new XMLHttpRequest();
     }
     else{ // IE
