@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ym.dao.AccountDao" >
+  <resultMap id="BaseResultMap" type="com.ym.bean.Account" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="real_name" property="realName" jdbcType="VARCHAR" />
+    <result column="birthday" property="birthday" jdbcType="VARCHAR" />
+    <result column="gender" property="gender" jdbcType="INTEGER" />
+    <result column="mobile_number" property="mobileNumber" jdbcType="VARCHAR" />
+    <result column="e_mail" property="eMail" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="education" property="eduction" jdbcType="INTEGER" />
+    <result column="state" property="state" jdbcType="INTEGER" />
+    <result column="cancel" property="cancel" jdbcType="INTEGER" />
+    <result column="input_user" property="inputUser" jdbcType="VARCHAR" />
+  	<result column="input_time" property="inputTime" jdbcType="DATE" />
+  	<result column="update_user" property="updateUser" jdbcType="VARCHAR" />
+  	<result column="update_time" property="updateTime" jdbcType="DATE" />
+  	<result column="remarks" property="remarks" jdbcType="VARCHAR" />
+  </resultMap>
+  <select id="getIdByDefaultCreater" parameterType="java.lang.String" resultType="java.lang.Integer">	
+  	select id from account where input_user = #{inputUser};
+  </select>
+  
+  <insert id="insertDefaultInfo" parameterType="com.ym.bean.Account">
+  	insert into account (state,cancel,input_user,input_time,update_user,update_time) value (
+  		#{state,jdbcType=INTEGER},#{cancel,jdbcType=INTEGER},#{inputUser,jdbcType=VARCHAR},
+  		#{inputTime,jdbcType=DATE},#{updateUser,jdbcType=VARCHAR},#{updateTime,jdbcType=DATE}
+  	)
+  </insert>
+</mapper>
