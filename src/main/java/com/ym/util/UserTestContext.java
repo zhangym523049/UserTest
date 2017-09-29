@@ -20,9 +20,27 @@ public class UserTestContext {
 	
 	public final static String USER_EXIST = "*该用户已存在,请重新输入用户名";
 	
+	public final static String USER_NOTEXIST = "用户不存在，请确认用户名是否输入正确";
+	
 	public final static String VERIFYCODE = "verifyCode";
 	
 	public final static String VERIFYCODE_ERROR = "验证码输入错误,请重新输入！";
+	
+	public final static String PASSWORD_CHECK_ERROR = "两次输入密码不一致，请重新输入！";
+	
+	public final static String CHECK_OK = "ok";
+	
+	public final static String USER_NAME = "userName";
+	
+	public final static String ENPTY_CODE ="";
+	
+	public final static String PASSWORD_ERROR = "密码错误，请重新输入！";
+	
+	
+	
+	
+	
+	
 	
 	
 }

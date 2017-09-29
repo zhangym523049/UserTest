@@ -1,22 +1,14 @@
 package com.ym.test;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import org.apache.commons.codec.digest.DigestUtils;
 
 public class TestEverything {
 	
-
-	 private static boolean match(String regex, String str) {
-		 Pattern pattern = Pattern.compile(regex);
-		 Matcher matcher = pattern.matcher(str);
-		 return matcher.matches();
-		 }
-	
 	public static void main(String[] args) {
+		String password = "qw";
 		
-		 System.out.println("///////");
-		 
-		 
+		System.out.println(DigestUtils.md5Hex(password));
+		System.out.println(DigestUtils.md5Hex(password).length());
 		
 	}
 }

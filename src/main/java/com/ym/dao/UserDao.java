@@ -8,7 +8,7 @@ public interface UserDao {
 	
 	int checkUserExist(String userName) throws Exception;
 	
-	
+	String selectPasswordByUserName(String userName);
 	
 
 }

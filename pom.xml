@@ -171,6 +171,11 @@
             <artifactId>commons-codec</artifactId>  
             <version>1.9</version>  
         </dependency>
+        <dependency>
+        	<groupId>commons-codec</groupId>
+        	<artifactId>commons-codec</artifactId>
+        	<version>1.6</version>
+    	</dependency>
   </dependencies>
   <build>
     <finalName>UserTest</finalName>

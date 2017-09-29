@@ -20,6 +20,21 @@ public class Account {
 	private String updateUser;   //更新人
 	private Date updateTime;     //更新时间
 	private String remarks;       //备注
+	
+	
+	
+	public Account(String inputUser) {
+		this.state = 1;
+		this.cancel = 1;
+		this.inputUser = inputUser;
+		this.updateUser = inputUser;
+		this.inputTime = new Date();
+		this.updateTime = new Date();
+	}
+	public Account() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	public int getId() {
 		return id;
 	}

@@ -14,18 +14,19 @@
     <result column="update_time" property="updateTime" jdbcType="DATE" />
     <result column="remarks" property="remarks" jdbcType="VARCHAR" />
   </resultMap>
-  
   <insert id="addUser" parameterType="com.ym.bean.User">
-  	insert into user (user_name,password,state,cancel,input_user,input_time) values
+  	insert into user (user_name,password,state,cancel,input_user,input_time,account_id) values
   	(#{userName,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR},
-  	 #{state,jdbcType=INTEGER},#{cancel,jdbcType=INTEGER},#{inputUser,jdbcType=VARCHAR}
-  	 #{inputTime,jdbcType=INTEGER})
+  	 #{state,jdbcType=INTEGER},#{cancel,jdbcType=INTEGER},#{inputUser,jdbcType=VARCHAR},
+  	 #{inputTime,jdbcType=INTEGER},#{accountId,jdbcType=INTEGER})
   </insert>
   
   <select id="checkUserExist" parameterType="java.lang.String" resultType="java.lang.Integer">
   	select count(1) from user where user_name = #{userName} 
   </select>
   
-  
+  <select id="selectPasswordByUserName" parameterType="java.lang.String" resultType="java.lang.String">
+  	select password from user where user_name = #{userName}
+  </select>
   
 </mapper>

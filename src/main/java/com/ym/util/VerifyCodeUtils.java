@@ -113,7 +113,7 @@ public class VerifyCodeUtils{
      * @param code 
      * @throws IOException 
      */  
-    public static String outputImage(int w, int h, OutputStream os, String code) throws IOException{  
+    public static void outputImage(int w, int h, OutputStream os, String code) throws IOException{  
         int verifySize = code.length();  
         BufferedImage image = new BufferedImage(w, h, BufferedImage.TYPE_INT_RGB);  
         Random rand = new Random();  
@@ -176,7 +176,6 @@ public class VerifyCodeUtils{
         ImageIO.write(image, "jpg", os);
         os.close();
         os.flush();
-        return code;
     }  
       
     private static Color getRandColor(int fc, int bc) {  

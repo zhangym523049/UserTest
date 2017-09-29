@@ -17,13 +17,14 @@ public class User {
 	private String remarks; // 备注
 
 	// 注册构造函数
-	public User(String userName, String password) {
+	public User(String userName, String password, int accountId) {
 		this.userName = userName;
 		this.password = password;
 		this.inputUser = userName;
 		this.inputTime = new Date();
 		this.cancel = 1;
 		this.state = 1;
+		this.accountId = accountId;
 	}
 
 	public int getId() {

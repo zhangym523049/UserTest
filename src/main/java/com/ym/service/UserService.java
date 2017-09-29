@@ -8,4 +8,6 @@ public interface UserService {
 	
 	boolean checkUserExist(String userName) throws Exception;
 	
+	boolean checkPasswordByUserName(String userName,String password)throws Exception;
+	
 }

@@ -9,13 +9,15 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.ym.util.UserTestContext;
+
 /**
  * login 
  */
 public class LoginInterceptor implements HandlerInterceptor {
 	
 	public static Logger logger = Logger.getLogger(LoginInterceptor.class);
-
+	
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
@@ -36,11 +38,13 @@ public class LoginInterceptor implements HandlerInterceptor {
         }  
         //获取Session
         HttpSession session = request.getSession();  
-        String username = (String)session.getAttribute("username");  
+        String username = (String)session.getAttribute(UserTestContext.USER_NAME);  
           
         if(username != null){  
             return true;  
         }  
+        
+        logger.info("当前session中的UserName信息为"+username+"即将跳转到登陆页面！");
         //不符合条件的，跳转到登录界面  
         request.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(request, response);  
           

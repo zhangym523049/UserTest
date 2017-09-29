@@ -8,9 +8,11 @@ public interface AccountDao {
 	
 	Account getAccountByInfo(Account account);
 	
+	int getIdByDefaultCreater(String userName);
+	
 	int insertDefaultInfo(Account account);
 	
-	int updateAccountById(Account account,int id);
+	int updateAccount(Account account);
 	
 	int cancelAccountById(int id);
 	

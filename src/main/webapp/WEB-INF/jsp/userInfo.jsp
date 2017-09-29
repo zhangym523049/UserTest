@@ -4,9 +4,39 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>个人信息</title>
+
+<script type="text/javascript">
+
+/**
+ *  使下面的个人信息的文本框进入可以编辑的状态
+ */
+function edit() {
+	
+}
+
+/**
+ *  ajax提交数据,保存至后台
+ */
+function save(){
+	
+	
+}
+
+
+</script>
+
 </head>
 <body>
+
 UserInfo
+<form action="">
+
+	个人信息 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="button" id="edit" value="编辑>>" onclick="edit()">
+	<input type="button" id="save" value="保存>>" onclick="save()">
+
+
+</form>
 </body>
 </html>
